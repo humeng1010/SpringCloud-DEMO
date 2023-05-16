@@ -12,6 +12,7 @@
     <modules>
         <module>cloud-provider-payment8001</module>
         <module>cloud-consumer-order80</module>
+        <module>cloud-api-common</module>
     </modules>
 
     <!--统一管理jar包版本-->
@@ -91,6 +92,13 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <optional>true</optional>
+            </dependency>
+
+            <!--项目通用模块抽取封装-->
+            <dependency>
+                <groupId>cn.wuluwulu</groupId>
+                <artifactId>cloud-api-common</artifactId>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
