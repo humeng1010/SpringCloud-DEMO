@@ -16,7 +16,6 @@ public class PaymentServiceImpl implements PaymentService {
     @Resource // java自带的
     private PaymentMapper paymentMapper;
 
-
     @Value("${server.port}")
     private String serverPort;
 

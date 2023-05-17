@@ -16,7 +16,8 @@ public class OrderController {
 
     private RestTemplate restTemplate;
 
-    public static final String PAYMENT_URL = "http://localhost:8001";
+    // public static final String PAYMENT_URL = "http://localhost:8001";
+    public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     /**
      * 使用构造函数从spring容器中注入 restTemplate
