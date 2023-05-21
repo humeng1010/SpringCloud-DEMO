@@ -21,7 +21,7 @@ public class OrderController {
     public static final String PAYMENT_URL = "http://CLOUD-PAYMENT-SERVICE";
 
     /**
-     * 使用构造函数从spring容器中注入 restTemplate
+     * 使用构造函数从spring容器中注入restTemplate
      *
      * @param restTemplate
      */
