@@ -15,3 +15,7 @@
 
 - `cloud-provider-payment8004` 提供者,支付供应商模块,注册进入Zookeeper
 - `cloud-consumerzk-order-80`消费者,订单消费模块,注册进入Zookeeper,调用提供者中的接口
+
+### Open Feign
+
+- `cloud-consumer-feign-order80` open feign 基本使用
