@@ -5,3 +5,13 @@ eureka:
     register-with-eureka: false
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+ribbon:
+  # 建立连接后从服务器读取到可用资源所用的时间
+  ReadTimeout: 5000
+  # 建立连接需要的时间
+  ConnectTimeout: 5000
+
+logging:
+  level:
+    # 以debug模式监控该接口
+    cn.wuluwulu.springcloud.service.PaymentFeignService: debug
