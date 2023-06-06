@@ -19,3 +19,7 @@
 ### Open Feign
 
 - `cloud-consumer-feign-order80` open feign 基本使用
+
+### hystrix
+
+- `cloud-provider-hystrix-payment8001` 
