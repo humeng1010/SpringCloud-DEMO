@@ -30,9 +30,8 @@ public class OrderHystrixController {
     // @HystrixCommand(fallbackMethod = "paymentInfoErrorHandler", commandProperties = {
     //         @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "1500")
     // })
-    @HystrixCommand
+    @HystrixCommand// 会使用DefaultProperties配置的回退方法
     public CommonResult<String> paymentInfoError(@PathVariable("id") Integer id) {
-        int a = 10 / 0;
         return paymentHystrixService.paymentInfoError(id);
     }
 
@@ -41,6 +40,6 @@ public class OrderHystrixController {
     }
 
     public CommonResult<String> paymentGlobalHandler() {
-        return new CommonResult<>(500, "80消费端Global异常┭┮﹏┭┮");
+        return new CommonResult<>(501, "80消费端Global异常┭┮﹏┭┮");
     }
 }

@@ -7,8 +7,7 @@ spring:
 
 eureka:
   client:
-    register-with-eureka: true
-    fetch-registry: true
+    register-with-eureka: false
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka/
 ribbon:
@@ -17,10 +16,10 @@ ribbon:
   # 建立连接需要的时间
   ConnectTimeout: 5000
 
-logging:
-  level:
-    # 以debug模式监控该接口
-    cn.wuluwulu.springcloud.service.PaymentHystrixService: debug
+#logging:
+#  level:
+#    # 以debug模式监控该接口
+#    cn.wuluwulu.springcloud.service.PaymentHystrixService: debug
 # 开启feign的hystrix
 feign:
   hystrix:
