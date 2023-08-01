@@ -1,6 +1,5 @@
 server:
-  port: 3355
-
+  port: 3366
 spring:
   application:
     name: cloud-config-client
@@ -29,5 +28,3 @@ management:
     web:
       exposure:
         include: "*"
-# 配置完毕,当github远程仓库中的配置修改了,config-server会从仓库中读取,但是client没有感知到config-server变化
-# 所以最后需要手动发送POST请求curl -X POST "http://localhost:3355/actuator/refresh"

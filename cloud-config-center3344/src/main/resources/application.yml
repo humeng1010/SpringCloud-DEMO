@@ -7,17 +7,31 @@ spring:
     config:
       server:
         git:
-#          仓库
+          #          仓库
           uri: https://github.com/humeng1010/springcloud-config.git
-#          搜索目录
+          #          搜索目录
           search-paths:
             - springcloud-config
       #      读取分支
       label: master
+  # rabbitMQ配置
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
 
 # eureka 配置 注册到eureka注册中心
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
-#      配置完毕后访问http://192.168.2.14:3344/master/config-dev.yml可以显示出仓库中的配置
+#      配置完毕后访问 http://192.168.2.14:3344/master/config-dev.yml可以显示出仓库中的配置
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
+# curl -X POST "http://localhost:3344/actuator/bus-refresh"
+# 手动刷新配置中心,由配置中心通过消息队列通知client客户端刷新配置
