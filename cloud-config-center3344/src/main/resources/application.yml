@@ -1,0 +1,23 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+#          仓库
+          uri: https://github.com/humeng1010/springcloud-config.git
+#          搜索目录
+          search-paths:
+            - springcloud-config
+      #      读取分支
+      label: master
+
+# eureka 配置 注册到eureka注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+#      配置完毕后访问http://192.168.2.14:3344/master/config-dev.yml可以显示出仓库中的配置

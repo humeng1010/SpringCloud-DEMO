@@ -1,0 +1,27 @@
+server:
+  port: 3355
+
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:
+      label: master # 分支名称
+      name: config # 配置文件名称
+      profile: dev # 配置文件后缀
+      uri: http://localhost:3344 # 配置中心地址
+
+# eureka 配置 注册到eureka注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+
+# 暴露监控端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# 配置完毕,当github远程仓库中的配置修改了,config-server会从仓库中读取,但是client没有感知到config-server变化
+# 所以最后需要手动发送POST请求curl -X POST "http://localhost:3355/actuator/refresh"
